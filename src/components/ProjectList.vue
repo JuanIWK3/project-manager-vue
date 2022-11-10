@@ -2,24 +2,28 @@
 import { usePeopleStore } from "@/store/people";
 import { useProjectStore } from "@/store/project";
 import { IRole } from "@/types";
+import { computed } from "@vue/reactivity";
 
 const peopleStore = usePeopleStore();
 const projectStore = useProjectStore();
-const people = peopleStore.$state.people;
-const projects = projectStore.$state.projects;
+peopleStore.getAllPeople();
+projectStore.getAllProjects();
+const people = computed(() => peopleStore.$state.people);
+const projects = computed(() => projectStore.projects);
 
 const filterByRole = (role: IRole) => {
-  return people.filter((p) => p.roles.includes(role));
+  return people.value.filter((p) => p.roles.includes(role));
 };
 </script>
 
 <template>
-  <div v-for="(project, index) in projects" class="project">
+  <div v-for="(project, projIdx) in projects" class="project">
     <h1 class="projectTitle">{{ project.name }}</h1>
     <p>{{ project.description }}</p>
     <br />
     <div class="section">
       <div class="title">Manager</div>
+      <div>{{ project.manager?.avatar }}{{ project.manager?.name }}</div>
       <div class="">
         <v-menu location="bottom center">
           <template v-slot:activator="{ props }">
@@ -27,11 +31,12 @@ const filterByRole = (role: IRole) => {
           </template>
           <v-list>
             <v-list-item
-              v-for="(item, index) in filterByRole('senior')"
+              v-for="(person, index) in filterByRole('senior')"
               :key="index"
+              @click="projectStore.addManager(project.id, person)"
             >
               <v-list-item-title
-                >{{ item.avatar }}{{ item.name }}</v-list-item-title
+                >{{ person.avatar }}{{ person.name }}</v-list-item-title
               >
             </v-list-item>
           </v-list>
@@ -40,15 +45,33 @@ const filterByRole = (role: IRole) => {
     </div>
     <div class="section">
       <div class="title">Devs</div>
+      <div class="div">
+        <div v-for="dev in project.devs">
+          {{ dev.avatar }}
+          {{ dev.name }}
+          <v-icon
+            size="15"
+            color="red"
+            class="remove"
+            @click="projectStore.removeDev(projIdx, dev)"
+          >
+            mdi-close
+          </v-icon>
+        </div>
+      </div>
       <div class="">
         <v-menu location="bottom center">
           <template v-slot:activator="{ props }">
             <v-btn color="primary" dark v-bind="props"> Assign </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in people" :key="index">
+            <v-list-item
+              v-for="(dev, index) in people"
+              :key="index"
+              @click="projectStore.addDev(project.id, dev)"
+            >
               <v-list-item-title
-                >{{ item.avatar }}{{ item.name }}</v-list-item-title
+                >{{ dev.avatar }}{{ dev.name }}</v-list-item-title
               >
             </v-list-item>
           </v-list>
@@ -65,5 +88,23 @@ const filterByRole = (role: IRole) => {
   width: 100%;
   align-items: center;
   justify-content: center;
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 16px;
+  }
+}
+.v-list-item {
+  cursor: pointer;
+}
+.remove {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 </style>

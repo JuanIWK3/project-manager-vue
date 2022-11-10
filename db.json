@@ -1,0 +1,93 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "name": "Juan BugCreator",
+      "roles": [
+        "pleno"
+      ],
+      "active": true,
+      "avatar": "🤔"
+    },
+    {
+      "id": 2,
+      "name": "Carlin Procrastinas",
+      "roles": [
+        "junior"
+      ],
+      "active": false,
+      "avatar": "😪"
+    },
+    {
+      "id": 3,
+      "name": "Paulo {{frost}}",
+      "roles": [
+        "senior"
+      ],
+      "active": true,
+      "avatar": "❄️"
+    },
+    {
+      "id": 4,
+      "name": "Matheus 7hezus",
+      "roles": [
+        "senior"
+      ],
+      "active": true,
+      "avatar": "🍁"
+    }
+  ],
+  "projects": [
+    {
+      "id": 0,
+      "name": "TI Manager",
+      "manager": {
+        "id": 4,
+        "name": "Matheus 7hezus",
+        "roles": [
+          "senior"
+        ],
+        "active": true,
+        "avatar": "🍁"
+      },
+      "devs": [
+        {
+          "id": 2,
+          "name": "Carlin Procrastinas",
+          "roles": [
+            "junior"
+          ],
+          "active": false,
+          "avatar": "😪"
+        },
+        {
+          "id": 1,
+          "name": "Juan BugCreator",
+          "roles": [
+            "pleno"
+          ],
+          "active": true,
+          "avatar": "🤔"
+        },
+        {
+          "id": 3,
+          "name": "Paulo {{frost}}",
+          "roles": [
+            "senior"
+          ],
+          "active": true,
+          "avatar": "❄️"
+        },
+        {
+          "id": 4,
+          "name": "Matheus 7hezus",
+          "roles": [
+            "senior"
+          ],
+          "active": true,
+          "avatar": "🍁"
+        }
+      ]
+    }
+  ]
+}

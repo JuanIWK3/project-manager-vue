@@ -14,6 +14,6 @@ const pinia = createPinia();
 
 registerPlugins();
 
-app.use(vuetify);
 app.use(pinia);
+app.use(vuetify);
 app.mount("#app");
