@@ -52,15 +52,6 @@
       },
       "devs": [
         {
-          "id": 2,
-          "name": "Carlin Procrastinas",
-          "roles": [
-            "junior"
-          ],
-          "active": false,
-          "avatar": "😪"
-        },
-        {
           "id": 1,
           "name": "Juan BugCreator",
           "roles": [
@@ -68,6 +59,15 @@
           ],
           "active": true,
           "avatar": "🤔"
+        },
+        {
+          "id": 2,
+          "name": "Carlin Procrastinas",
+          "roles": [
+            "junior"
+          ],
+          "active": false,
+          "avatar": "😪"
         },
         {
           "id": 3,

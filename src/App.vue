@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import ProjectList from "@/components/ProjectList.vue";
+import Navbar from "@/components/Navbar.vue";
 </script>
 
 <template>
   <v-app>
-    <v-main><ProjectList /></v-main>
+    <header><Navbar /></header>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
   </v-app>
 </template>
 

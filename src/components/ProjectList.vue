@@ -8,7 +8,7 @@ const peopleStore = usePeopleStore();
 const projectStore = useProjectStore();
 peopleStore.getAllPeople();
 projectStore.getAllProjects();
-const people = computed(() => peopleStore.$state.people);
+const people = computed(() => peopleStore.people);
 const projects = computed(() => projectStore.projects);
 
 const filterByRole = (role: IRole) => {
@@ -79,6 +79,7 @@ const filterByRole = (role: IRole) => {
       </div>
     </div>
   </div>
+  <br />
 </template>
 
 <style lang="scss" scoped>
