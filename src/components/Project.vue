@@ -13,6 +13,8 @@ const tab = ref(null);
 const projectNames = computed(() => projects.value.map((p) => p.name));
 const projectInputSel = ref<IProject | null>(null);
 
+const activeStatus = computed(() => {});
+
 watch(projectInputSel, async (newValue, oldValue) => {
   console.log(newValue, oldValue);
   projectStore.selectProject(newValue!);
@@ -44,6 +46,10 @@ watch(projectInputSel, async (newValue, oldValue) => {
         </figure>
         <v-card-title> {{ dev.name }}</v-card-title>
         <v-card-subtitle>{{ dev.email }}</v-card-subtitle>
+        <div class="d-flex align-center mt-2">
+          <span :class="`active-status ${dev.active ? 'active' : 'inactive'} red lighten-1`"></span>
+          <small>{{ dev.active ? 'Active' : 'Inactive' }}</small>
+        </div>
         <div class="footer">{{ dev.role }}</div>
       </v-card>
     </div>
@@ -85,6 +91,22 @@ watch(projectInputSel, async (newValue, oldValue) => {
   grid-template-columns: 1fr;
   gap: 24px;
   padding: 32px;
+
+  .active-status {
+    content: "";
+    margin-right: 5px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    &.active {
+      background: green;
+    }
+
+    &.inactive {
+      background: red;
+    }
+  }
 
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
