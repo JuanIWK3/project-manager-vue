@@ -23,7 +23,6 @@ const filterByRole = (role: IRole) => {
     <br />
     <div class="section">
       <div class="title">Manager</div>
-      <div>{{ project.manager?.avatar }}{{ project.manager?.name }}</div>
       <div class="">
         <v-menu location="bottom center">
           <template v-slot:activator="{ props }">
@@ -35,9 +34,6 @@ const filterByRole = (role: IRole) => {
               :key="index"
               @click="projectStore.addManager(project.id, person)"
             >
-              <v-list-item-title
-                >{{ person.avatar }}{{ person.name }}</v-list-item-title
-              >
             </v-list-item>
           </v-list>
         </v-menu>
@@ -47,7 +43,6 @@ const filterByRole = (role: IRole) => {
       <div class="title">Devs</div>
       <div class="div">
         <div v-for="dev in project.devs">
-          {{ dev.avatar }}
           {{ dev.name }}
           <v-icon
             size="15"

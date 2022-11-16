@@ -16,7 +16,7 @@ export const useProjectStore = defineStore("project", {
       const res = await ProjectService.getProjects();
       this.projects = res.data;
     },
-    async selectProject(project: IProject) {
+    async selectProject(project: IProject | null) {
       this.selected = project;
     },
     addProject(project: IProject) {
