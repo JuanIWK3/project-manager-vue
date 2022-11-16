@@ -11,11 +11,11 @@ const projects = computed(() => projectStore.projects);
 const selected = computed(() => projectStore.selected);
 const tab = ref(null);
 const projectNames = computed(() => projects.value.map((p) => p.name));
-const projectInputSel = ref<IProject>(null);
+const projectInputSel = ref<IProject | null>(null);
 
 watch(projectInputSel, async (newValue, oldValue) => {
   console.log(newValue, oldValue);
-  projectStore.selectProject(newValue);
+  projectStore.selectProject(newValue!);
 });
 </script>
 
@@ -63,6 +63,14 @@ watch(projectInputSel, async (newValue, oldValue) => {
 
   .teams {
     border-bottom: 1px solid #ccc;
+
+    .v-select {
+      font-size: 36px;
+    }
+
+    .v-select__selection-text {
+      font-size: 36px;
+    }
   }
   .filters {
     padding: 16px 0;

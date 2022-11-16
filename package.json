@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "db": "json-server db.json -p 4000"
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
