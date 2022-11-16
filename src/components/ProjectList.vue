@@ -86,7 +86,7 @@ const filterByRole = (role: IRole) => {
 .project {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 200px;
   align-items: center;
   justify-content: center;
 

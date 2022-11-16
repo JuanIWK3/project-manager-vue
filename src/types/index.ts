@@ -2,11 +2,10 @@ export interface IPerson {
   id: number;
   name: string;
   active: boolean;
-  roles: IRole[];
+  role: string;
   avatar: string;
+  email: string;
 }
-
-export type IRole = "junior" | "pleno" | "senior";
 
 export interface IPersonState {
   people: IPerson[];
@@ -14,6 +13,7 @@ export interface IPersonState {
 
 export interface IProjectState {
   projects: IProject[];
+  selected: IProject | null;
 }
 
 export interface IProject {

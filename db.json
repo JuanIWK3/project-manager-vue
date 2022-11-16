@@ -3,91 +3,87 @@
     {
       "id": 1,
       "name": "Juan BugCreator",
-      "roles": [
-        "pleno"
-      ],
+      "role": "Melhor Dev",
       "active": true,
-      "avatar": "🤔"
+      "email": "juan@gmail.com",
+      "avatar": "https://i.pinimg.com/originals/37/f7/32/37f732eabc237485d7b641fb57f804ad.jpg"
     },
     {
       "id": 2,
       "name": "Carlin Procrastinas",
-      "roles": [
-        "junior"
-      ],
+      "role": "Junior Dev",
       "active": false,
-      "avatar": "😪"
+      "email": "carlin@gmail.com",
+      "avatar": "https://i.pinimg.com/736x/07/40/0d/07400d1cbf1a7a64625402e33ce10c68.jpg"
     },
     {
       "id": 3,
       "name": "Paulo {{frost}}",
-      "roles": [
-        "senior"
-      ],
+      "role": "Senior Dev",
       "active": true,
-      "avatar": "❄️"
+      "email": "paulo@gmail.com",
+      "avatar": "https://i.scdn.co/image/ab67616d0000b2731951b751da74252736e87889"
     },
     {
       "id": 4,
       "name": "Matheus 7hezus",
-      "roles": [
-        "senior"
-      ],
+      "role": "Senior Dev",
       "active": true,
-      "avatar": "🍁"
+      "email": "matheus@gmail.com",
+      "avatar": "https://qph.cf2.quoracdn.net/main-qimg-72d76e41e88950cea9c9a7ca0deb46cb-lq"
     }
   ],
   "projects": [
     {
       "id": 0,
-      "name": "TI Manager",
-      "manager": {
-        "id": 4,
-        "name": "Matheus 7hezus",
-        "roles": [
-          "senior"
-        ],
-        "active": true,
-        "avatar": "🍁"
-      },
+      "name": "IT Manager",
+      "manager": null,
       "devs": [
         {
-          "id": 1,
-          "name": "Juan BugCreator",
-          "roles": [
-            "pleno"
-          ],
+          "id": 4,
+          "name": "Matheus 7hezus",
+          "role": "Senior Dev",
           "active": true,
-          "avatar": "🤔"
-        },
-        {
-          "id": 2,
-          "name": "Carlin Procrastinas",
-          "roles": [
-            "junior"
-          ],
-          "active": false,
-          "avatar": "😪"
+          "email": "matheus@gmail.com",
+          "avatar": "https://qph.cf2.quoracdn.net/main-qimg-72d76e41e88950cea9c9a7ca0deb46cb-lq"
         },
         {
           "id": 3,
           "name": "Paulo {{frost}}",
-          "roles": [
-            "senior"
-          ],
+          "role": "Senior Dev",
           "active": true,
-          "avatar": "❄️"
+          "email": "paulo@gmail.com",
+          "avatar": "https://i.scdn.co/image/ab67616d0000b2731951b751da74252736e87889"
         },
         {
-          "id": 4,
-          "name": "Matheus 7hezus",
-          "roles": [
-            "senior"
-          ],
+          "id": 2,
+          "name": "Carlin Procrastinas",
+          "role": "Junior Dev",
+          "active": false,
+          "email": "carlin@gmail.com",
+          "avatar": "https://i.pinimg.com/736x/07/40/0d/07400d1cbf1a7a64625402e33ce10c68.jpg"
+        },
+        {
+          "id": 1,
+          "name": "Juan BugCreator",
+          "role": "Melhor Dev",
           "active": true,
-          "avatar": "🍁"
+          "email": "juan@gmail.com",
+          "avatar": "https://i.pinimg.com/originals/37/f7/32/37f732eabc237485d7b641fb57f804ad.jpg"
         }
       ]
+    },
+    {
+      "id": 1,
+      "name": "Projecto 2",
+      "manager": null,
+      "devs": []
+    },
+    {
+      "id": 2,
+      "name": "Projeto fodas",
+      "manager": null,
+      "devs": []
     }
   ]
 }

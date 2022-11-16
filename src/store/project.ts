@@ -7,6 +7,7 @@ export const useProjectStore = defineStore("project", {
   state: () => {
     return {
       projects: [],
+      selected: null,
     } as IProjectState;
   },
 
@@ -14,6 +15,9 @@ export const useProjectStore = defineStore("project", {
     async getAllProjects() {
       const res = await ProjectService.getProjects();
       this.projects = res.data;
+    },
+    async selectProject(project: IProject) {
+      this.selected = project;
     },
     addProject(project: IProject) {
       this.projects.push(project);

@@ -36,7 +36,7 @@ const router = createRouter({
   routes,
 });
 
-app.use(router);
+// app.use(router);
 app.use(pinia);
 app.use(vuetify);
 app.mount("#app");
